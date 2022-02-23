@@ -6,21 +6,21 @@ local S = minetest.get_translator(minetest.get_current_modname())
 minetest.register_decoration({
 	name = "mangotree:wildmango",
 	deco_type = "schematic",
-	place_on = {"default:dirt_with_grass"},
+	place_on = {"default:dirt_with_grass", "ethereal:bamboo_dirt","ethereal:dry_dirt"},
 	sidelen = 16,
 	noise_params = {
 		offset = 0.001,
 		scale = 0.002,
 		spread = {x = 250, y = 250, z = 250},
-		seed = 3462,
+		seed = 1007,
 		octaves = 3,
 		persist = 0.66
 	},
 	biomes = {"deciduous_forest"},
 	y_min = 1,
-	y_max = 20,
+	y_max = 50,
 	schematic = modpath.."/schematics/wildmango.mts",
-	flags = "place_center_x, place_center_z, force_placement",
+	flags = "place_center_x, place_center_z",
 	rotation = "random",
 })
 
@@ -51,7 +51,7 @@ if not default.can_grow(pos) then
 		return
 	end
 	minetest.remove_node(pos)
-	minetest.place_schematic({x = pos.x-3, y = pos.y, z = pos.z-3}, modpath.."/schematics/mangotree.mts", "0", nil, false)
+	minetest.place_schematic({x = pos.x-3, y = pos.y, z = pos.z-3}, modpath.."/schematics/mangotreee.mts", "0", nil, false)
 end
 
 if minetest.get_modpath("bonemeal") ~= nil then
